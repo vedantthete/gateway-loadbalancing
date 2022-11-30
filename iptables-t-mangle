@@ -1,0 +1,5 @@
+iptables -t mangle -A OUTPUT -j CONNMARK --restore-mark
+iptables -t mangle -A OUTPUT -m mark ! --mark 0x0 -j RETURN
+iptables -t mangle -A OUTPUT -m statistic --mode random --probability 0.5 -j MARK --set-mark 10
+iptables -t mangle -A OUTPUT -m mark ! --mark 10 -j MARK --set-mark 20
+iptables -t mangle -A OUTPUT -j CONNMARK --save-mark
