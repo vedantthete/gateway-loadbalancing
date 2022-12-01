@@ -1,0 +1,2 @@
+default via 192.168.x.x dev wlo1
+default via 192.168.x.x dev eno1
