@@ -1,0 +1,2 @@
+ip rule add fwmark 10 table eno priority 3000
+ip rule add fwmark 20 table wlo priority 3000
